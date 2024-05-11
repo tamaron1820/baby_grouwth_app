@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'bottom_navigation.dart';
-import 'record_page.dart';
+import 'record_page/record_page.dart';
 import 'summary_page.dart';
 import 'consultation_page.dart';
 import 'growth_page.dart';
 import 'settings_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting('ja_JP', null).then((_) {
+    Intl.defaultLocale = 'ja_JP';
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
